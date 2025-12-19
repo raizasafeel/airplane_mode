@@ -1,0 +1,55 @@
+{
+ "add_total_row": 1,
+ "add_translate_data": 0,
+ "columns": [
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airplane",
+   "width": 0
+  },
+  {
+   "fieldname": "revenue",
+   "fieldtype": "Currency",
+   "label": "Revenue",
+   "width": 0
+  }
+ ],
+ "creation": "2025-12-19 10:44:44.322395",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2025-12-19 15:48:00.155134",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Revenue By Airline",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Airplane Ticket",
+ "report_name": "Revenue By Airline",
+ "report_script": "import frappe\n\ndef execute(filters=None):\n    columns = [\n        {\"fieldname\": \"airline\", \"label\": \"Airline\", \"fieldtype\": \"Link\", \"options\": \"Airline\", \"width\": 200},\n        {\"fieldname\": \"revenue\", \"label\": \"Revenue\", \"fieldtype\": \"Currency\", \"width\": 150}\n    ]\n\n    ticket_data = frappe.db.sql(\"\"\"\n        SELECT \n            air.airline as airline, \n            SUM(t.total_amount) as revenue\n        FROM \n            `tabAirplane Ticket` t\n        JOIN \n            `tabAirplane Flight` f ON t.flight = f.name\n        JOIN \n            `tabAirplane` air ON f.airplane = air.name\n        GROUP BY \n            air.airline\n    \"\"\", as_dict=True)\n\n    airlines = frappe.get_all(\"Airline\", fields=[\"name\"])\n    revenue_map = {d.airline: d.revenue for d in ticket_data}\n\n    data = []\n    total_revenue = 0\n    for a in airlines:\n        rev = revenue_map.get(a.name) or 0\n        data.append({\"airline\": a.name, \"revenue\": rev})\n        total_revenue += rev\n\n    chart = {\n        \"data\": {\n            \"labels\": [d[\"airline\"] for d in data if d[\"revenue\"] > 0],\n            \"datasets\": [{\"values\": [d[\"revenue\"] for d in data if d[\"revenue\"] > 0]}]\n        },\n        \"type\": \"donut\"\n    }\n\n    report_summary = [\n        {\"value\": total_revenue, \"indicator\": \"Green\", \"label\": \"Total Revenue\", \"datatype\": \"Currency\"}\n    ]\n\n    return columns, data, None, chart, report_summary",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Airport Authority Personnel"
+  },
+  {
+   "role": "Flight Crew Member"
+  },
+  {
+   "role": "Travel Agent"
+  },
+  {
+   "role": "Fleet Manager"
+  }
+ ],
+ "timeout": 0
+}

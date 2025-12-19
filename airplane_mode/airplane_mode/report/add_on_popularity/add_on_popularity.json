@@ -1,0 +1,52 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [
+  {
+   "fieldname": "add_on_type",
+   "fieldtype": "Link",
+   "label": "Add-On Type",
+   "options": "Airplane Ticket Add-On Type",
+   "width": 0
+  },
+  {
+   "fieldname": "sold_count",
+   "fieldtype": "Int",
+   "label": "Sold Count",
+   "width": 0
+  }
+ ],
+ "creation": "2025-12-19 10:03:31.585212",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2025-12-19 15:45:15.613376",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Add-on Popularity",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \nitem AS 'add_on_type',\nCOUNT(item) AS 'sold_count'\nFROM \n`tabAirplane Ticket Add-on Item`\nGROUP BY\nitem\nORDER BY\nsold_count DESC",
+ "ref_doctype": "Airplane Ticket",
+ "report_name": "Add-on Popularity",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Airport Authority Personnel"
+  },
+  {
+   "role": "Flight Crew Member"
+  },
+  {
+   "role": "Travel Agent"
+  }
+ ],
+ "timeout": 0
+}
