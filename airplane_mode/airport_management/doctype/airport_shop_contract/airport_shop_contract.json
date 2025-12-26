@@ -1,0 +1,309 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CT-.#####",
+ "creation": "2025-12-23 09:53:10.691407",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "general_tab",
+  "general_details_section",
+  "shop",
+  "area",
+  "column_break_wpdp",
+  "airport",
+  "city",
+  "section_break_ofgo",
+  "tenant",
+  "shop_category",
+  "column_break_odam",
+  "email",
+  "phone",
+  "contract_tab",
+  "contract_details_section",
+  "status",
+  "date",
+  "terms_of_contract",
+  "duration_section",
+  "start_date",
+  "column_break_blqe",
+  "end_date",
+  "section_break_jnoh",
+  "tenant_name",
+  "signature_of_tenant",
+  "column_break_cirz",
+  "name_of_signing_authority",
+  "signature_of_airport_authority",
+  "section_break_luli",
+  "amended_from",
+  "billing_tab",
+  "section_break_wcgf",
+  "rent_amount",
+  "tax_rate",
+  "total_amount",
+  "column_break_iwng",
+  "billing_cycle",
+  "tax_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Licensee Name",
+   "options": "Airport Tenant"
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Airport Shop"
+  },
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Valid From"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airport Shop Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_wcgf",
+   "fieldtype": "Section Break",
+   "label": "Billing Details"
+  },
+  {
+   "fieldname": "tax_rate",
+   "fieldtype": "Float",
+   "label": "Tax Rate"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "general_tab",
+   "fieldtype": "Tab Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "general_details_section",
+   "fieldtype": "Section Break",
+   "label": "Licensor Details"
+  },
+  {
+   "fetch_from": "shop.airport",
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wpdp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "tenant.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "tenant.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iwng",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Monthly",
+   "fieldname": "billing_cycle",
+   "fieldtype": "Select",
+   "label": "Billing Cycle",
+   "options": "Monthly\nAnnual"
+  },
+  {
+   "fetch_from": "tenant.tax_id",
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contract"
+  },
+  {
+   "fieldname": "contract_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "default": "1. Parties\n\nThis Agreement is entered into between the Airport Authority (\u201cLicensor\u201d) and the Shop Operator (\u201cLicensee\u201d).\n\n2. Licensed / Leased Premises\n\nThe Licensor grants the Licensee the right to operate a retail shop in the designated space within the airport terminal, as specified above.\n\n3. Purpose of Use\n\nThe premises shall be used only for the approved retail/business activity as permitted by the Airport Authority and shall not be used for any other purpose without prior written consent.\n\n4. Term / Duration\n\nThe term of this Agreement shall be for the duration as given above.\n\n5. Commencement Date\n\nThe Agreement shall commence from the start date as given above.\n\n6. Expiry / End Date\n\nThis Agreement shall automatically expire on the end date as given above, unless renewed or extended in writing by the Licensor.\n\n7. License Fee / Rent\n\nThe Licensee shall pay the agreed license fee/rent to the Licensor as specified above, within the stipulated timelines.\n\n8. Revenue Share (if applicable)\n\nIn addition to the fixed license fee, the Licensee shall pay a revenue share percentage as agreed and specified above, calculated on gross sales.\n\n9. Security Deposit\n\nThe Licensee shall deposit a refundable security amount as mentioned above, which shall be adjusted against dues or refunded subject to satisfactory handover of the premises.\n\n10. Utilities & Operational Costs\n\nAll electricity, water, internet, waste management, and other operational charges shall be borne by the Licensee unless otherwise specified above.\n\n11. Maintenance & Housekeeping\n\nThe Licensee shall maintain the premises in a clean, safe, and hygienic condition at all times, in compliance with airport standards.\n\n12. Compliance with Airport Rules\n\nThe Licensee shall comply with:\n\nAirport security regulations\n\nSafety and fire norms\n\nOperational timings\n\nBranding, signage, and display guidelines\nas issued by the Airport Authority from time to time.\n\n13. Alterations & Fit-Out\n\nNo structural or design modifications shall be made without prior written approval of the Licensor. All fit-outs shall conform to airport specifications.\n\n14. Staffing & Security\n\nAll staff deployed by the Licensee must comply with airport security clearance, dress code, and access regulations.\n\n15. Insurance\n\nThe Licensee shall maintain valid insurance coverage for:\n\nPublic liability\n\nFire and theft\n\nEmployees (if applicable)\nas required by the Airport Authority.\n\n16. Termination\n\nThe Licensor may terminate the Agreement:\n\nFor breach of terms\n\nFor security or operational reasons\n\nAs per notice period specified above\n\nThe Licensee may terminate the Agreement by giving written notice as specified above.\n\n17. Force Majeure\n\nNeither party shall be liable for failure to perform obligations due to events beyond reasonable control, including natural disasters, government orders, or airport shutdowns.\n\n18. Handover on Expiry / Termination\n\nUpon expiry or termination, the Licensee shall vacate and hand over the premises in good condition, subject to normal wear and tear.\n\n19. Governing Law & Jurisdiction\n\nThis Agreement shall be governed by the laws as specified above, and disputes shall be subject to the jurisdiction as mentioned above.",
+   "fieldname": "terms_of_contract",
+   "fieldtype": "Text",
+   "label": "Terms of Contract"
+  },
+  {
+   "fieldname": "duration_section",
+   "fieldtype": "Section Break",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "column_break_blqe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Valid Till"
+  },
+  {
+   "fieldname": "section_break_jnoh",
+   "fieldtype": "Section Break",
+   "label": "Signature"
+  },
+  {
+   "fetch_from": "tenant.full_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Name of Signing Tenant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "signature_of_tenant",
+   "fieldtype": "Signature",
+   "label": "Signature of Tenant"
+  },
+  {
+   "fieldname": "column_break_cirz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name_of_signing_authority",
+   "fieldtype": "Data",
+   "label": "Name of Signing Authority"
+  },
+  {
+   "fieldname": "signature_of_airport_authority",
+   "fieldtype": "Signature",
+   "label": "Signature of Airport Authority"
+  },
+  {
+   "fieldname": "billing_tab",
+   "fieldtype": "Tab Break",
+   "label": "Billing"
+  },
+  {
+   "fetch_from": "shop.area_sq_ft",
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area (sq. ft.)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ofgo",
+   "fieldtype": "Section Break",
+   "label": "Licensee Details"
+  },
+  {
+   "fetch_from": "airport.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fetch_from": "tenant.shop_category",
+   "fieldname": "shop_category",
+   "fieldtype": "Data",
+   "label": "Shop Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_odam",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Expired\nActive\nPending\nCancelled"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_luli",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-26 12:34:06.988531",
+ "modified_by": "Administrator",
+ "module": "Airport Management",
+ "name": "Airport Shop Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Red",
+   "title": "Expired"
+  },
+  {
+   "color": "Blue",
+   "title": "Active"
+  },
+  {
+   "color": "Yellow",
+   "title": "Pending"
+  },
+  {
+   "color": "Orange",
+   "title": "Cancelled"
+  }
+ ]
+}

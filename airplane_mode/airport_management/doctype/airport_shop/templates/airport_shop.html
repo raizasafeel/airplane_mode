@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/assets/airplane_mode/css/shops.css">
+
+<div>
+    <h3>
+        <span>{{ title | e }}</span>
+        <span class="badge badge-info">{{ doc.status }}</span>
+    </h3>
+
+    <div class="description">
+        <p>
+            Located in {{ doc.airport }} in Terminal {{ doc.terminal }}
+            on the {{ doc.floor }} floor.
+            <br>
+            Shop Size: {{ doc.area_sq_ft }} sq ft.
+            <br><br>
+            Please contact us for more details about leasing this shop.
+        </p>
+    </div>
+
+    <div>
+        <button
+          class="btn btn-primary"
+          onclick="window.location.href='/interest-lease-form/new?shop={{ doc.name }}'">
+            Contact us →
+        </button>
+    </div>
+</div>

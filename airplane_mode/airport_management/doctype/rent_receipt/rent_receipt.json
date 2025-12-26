@@ -1,0 +1,298 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "RCT.#######",
+ "creation": "2025-12-24 10:17:36.882241",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "billing_tab",
+  "contract",
+  "bill_section",
+  "status",
+  "date",
+  "amount_paid",
+  "column_break_gkrn",
+  "due_date",
+  "amended_from",
+  "general_tab",
+  "contract_section",
+  "date_rdbf",
+  "contract_valid_till",
+  "general_details_section",
+  "shop",
+  "area",
+  "column_break_wpdp",
+  "airport",
+  "city",
+  "section_break_ofgo",
+  "tenant",
+  "shop_category",
+  "column_break_odam",
+  "email",
+  "phone",
+  "contract_tab",
+  "section_break_wcgf",
+  "rent_amount",
+  "tax_rate",
+  "total_amount",
+  "column_break_iwng",
+  "billing_cycle",
+  "tax_id"
+ ],
+ "fields": [
+  {
+   "fetch_from": "contract.tenant",
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Licensee Name",
+   "options": "Airport Tenant",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.shop",
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Airport Shop",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.rent_amount",
+   "fieldname": "rent_amount",
+   "fieldtype": "Float",
+   "label": "Rent Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Receipt",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_wcgf",
+   "fieldtype": "Section Break",
+   "label": "Billing Details"
+  },
+  {
+   "fetch_from": "contract.tax_rate",
+   "fieldname": "tax_rate",
+   "fieldtype": "Float",
+   "label": "Tax Rate",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.total_amount",
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "general_tab",
+   "fieldtype": "Tab Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "general_details_section",
+   "fieldtype": "Section Break",
+   "label": "Licensor Details",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.airport",
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wpdp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "tenant.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "tenant.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iwng",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Monthly",
+   "fetch_from": "contract.billing_cycle",
+   "fieldname": "billing_cycle",
+   "fieldtype": "Select",
+   "label": "Billing Cycle",
+   "options": "Monthly\nAnnual",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "tenant.tax_id",
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contract"
+  },
+  {
+   "fieldname": "billing_tab",
+   "fieldtype": "Tab Break",
+   "label": "Receipt"
+  },
+  {
+   "fetch_from": "shop.area_sq_ft",
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area (sq. ft.)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ofgo",
+   "fieldtype": "Section Break",
+   "label": "Licensee Details",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "airport.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "tenant.shop_category",
+   "fieldname": "shop_category",
+   "fieldtype": "Data",
+   "label": "Shop Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_odam",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_section",
+   "fieldtype": "Section Break",
+   "label": "Contract"
+  },
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Airport Shop Contract"
+  },
+  {
+   "fetch_from": "contract.start_date",
+   "fieldname": "date_rdbf",
+   "fieldtype": "Date",
+   "label": "Contract Valid From",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract.end_date",
+   "fieldname": "contract_valid_till",
+   "fieldtype": "Date",
+   "label": "Contract Valid Till",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Paid\nPending\nOverdue"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid"
+  },
+  {
+   "fieldname": "column_break_gkrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "bill_section",
+   "fieldtype": "Section Break",
+   "label": "Receipt"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-26 13:00:07.723524",
+ "modified_by": "Administrator",
+ "module": "Airport Management",
+ "name": "Rent Receipt",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Paid"
+  },
+  {
+   "color": "Orange",
+   "title": "Pending"
+  },
+  {
+   "color": "Red",
+   "title": "Overdue"
+  },
+  {
+   "color": "Yellow",
+   "title": "Partially Paid"
+  }
+ ]
+}

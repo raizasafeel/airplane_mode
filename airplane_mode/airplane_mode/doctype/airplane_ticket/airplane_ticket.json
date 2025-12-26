@@ -21,6 +21,7 @@
   "departure_details_section",
   "departure_date",
   "departure_time",
+  "gate",
   "column_break_agvi",
   "duration_of_flight",
   "amended_from",
@@ -173,13 +174,19 @@
    "fieldname": "seat",
    "fieldtype": "Data",
    "label": "Seat"
+  },
+  {
+   "fetch_from": "flight.gate",
+   "fieldname": "gate",
+   "fieldtype": "Data",
+   "label": "Gate"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-19 14:59:59.185560",
+ "modified": "2025-12-20 19:06:45.172094",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

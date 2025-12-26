@@ -1,7 +1,6 @@
 import frappe
 import random
 def execute():
-    frappe.reload_doc("airplane_mode", "doctype", "airplane_ticket")
     tickets = frappe.db.get_all("Airplane Ticket", filters={"seat": ["is", "not set"]})
 
     for ticket in tickets:

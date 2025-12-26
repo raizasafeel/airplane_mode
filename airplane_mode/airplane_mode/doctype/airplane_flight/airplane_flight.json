@@ -7,6 +7,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "general_section",
   "airplane",
   "column_break_kiyi",
   "status",
@@ -15,13 +16,19 @@
   "duration",
   "column_break_shcn",
   "time_of_departure",
+  "eta",
+  "airport_tab",
   "airport_details_section",
   "source_airport",
   "source_airport_code",
+  "gate",
   "column_break_wccd",
   "destination_airport",
   "destination_airport_code",
   "amended_from",
+  "crew_tab",
+  "crew_members",
+  "miscellaneous_tab",
   "miscellaneous_section",
   "published",
   "route"
@@ -125,7 +132,7 @@
   {
    "fieldname": "miscellaneous_section",
    "fieldtype": "Section Break",
-   "label": "Miscellaneous"
+   "label": "Web View"
   },
   {
    "default": "0",
@@ -137,14 +144,56 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
+  },
+  {
+   "fieldname": "gate",
+   "fieldtype": "Data",
+   "label": "Gate"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "airport_tab",
+   "fieldtype": "Tab Break",
+   "label": "Airport"
+  },
+  {
+   "fieldname": "miscellaneous_tab",
+   "fieldtype": "Tab Break",
+   "label": "Miscellaneous"
+  },
+  {
+   "fieldname": "eta",
+   "fieldtype": "Date",
+   "label": "Expected Time of Arrival",
+   "read_only": 1
+  },
+  {
+   "fieldname": "crew_tab",
+   "fieldtype": "Tab Break",
+   "label": "Crew"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Flight Crew"
   }
  ],
  "grid_page_length": 50,
  "has_web_view": 1,
  "is_published_field": "published",
  "is_submittable": 1,
- "links": [],
- "modified": "2025-12-19 14:56:36.594351",
+ "links": [
+  {
+   "link_doctype": "Crew Member",
+   "link_fieldname": "flight"
+  }
+ ],
+ "modified": "2025-12-26 10:59:09.960224",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -160,18 +209,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Airport Authority Personnel",
    "share": 1,
    "write": 1
   },
@@ -204,6 +241,18 @@
    "report": 1,
    "role": "Travel Agent",
    "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
   }
  ],
  "route": "flights",
@@ -211,5 +260,18 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Cyan",
+   "title": "Scheduled"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ]
 }

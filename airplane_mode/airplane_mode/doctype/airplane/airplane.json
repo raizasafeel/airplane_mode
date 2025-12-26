@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "general_info_section",
   "model",
   "airline",
   "capacity",
@@ -42,6 +43,11 @@
    "fieldtype": "Check",
    "label": "Initial Audit Completed",
    "permlevel": 1
+  },
+  {
+   "fieldname": "general_info_section",
+   "fieldtype": "Section Break",
+   "label": "General Info"
   }
  ],
  "grid_page_length": 50,
@@ -52,7 +58,7 @@
    "link_fieldname": "airplane"
   }
  ],
- "modified": "2025-12-19 15:02:35.430403",
+ "modified": "2025-12-22 14:40:08.691628",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane",
