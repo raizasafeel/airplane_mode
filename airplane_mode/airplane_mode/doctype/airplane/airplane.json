@@ -9,6 +9,7 @@
   "general_info_section",
   "model",
   "airline",
+  "column_break_khyd",
   "capacity",
   "initial_audit_completed"
  ],
@@ -48,6 +49,10 @@
    "fieldname": "general_info_section",
    "fieldtype": "Section Break",
    "label": "General Info"
+  },
+  {
+   "fieldname": "column_break_khyd",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -58,7 +63,7 @@
    "link_fieldname": "airplane"
   }
  ],
- "modified": "2025-12-22 14:40:08.691628",
+ "modified": "2025-12-30 13:16:01.727418",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane",

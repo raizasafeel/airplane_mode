@@ -15,8 +15,9 @@
   "phone",
   "shop_details_section",
   "shop_name",
-  "shop_category",
   "shop_type",
+  "column_break_kuqe",
+  "shop_category",
   "tax_details_section",
   "tax_id"
  ],
@@ -100,12 +101,16 @@
    "label": "Shop Type",
    "link_filters": "[[\"Shop Type\",\"enabled\",\"=\",1]]",
    "options": "Shop Type"
+  },
+  {
+   "fieldname": "column_break_kuqe",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-24 14:39:53.685961",
+ "modified": "2025-12-30 13:02:12.166673",
  "modified_by": "Administrator",
  "module": "Airport Management",
  "name": "Airport Tenant",

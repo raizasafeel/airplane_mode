@@ -3,7 +3,7 @@ from frappe.utils import getdate, today, add_months
 
 def send_rent_reminders():
     settings = frappe.get_single("Airport Setting")
-    if not settings.enable_rent_reminders:
+    if not settings.rent_reminder:
         return
     
     curr_date = getdate(today())
@@ -15,7 +15,7 @@ def send_rent_reminders():
             "start_date": ["<=", curr_date],
             "end_date": [">=", curr_date],
         },
-        fields=["name", "email", "shop", "billing_cycle", "end_date"]
+        fields=["name", "tenant", "shop", "billing_cycle", "start_date", "end_date"]
     )
 
     for contract in contracts:
@@ -33,6 +33,9 @@ def send_rent_reminders():
             should_send = True
         
         if should_send:
+            # Get tenant email from Airport Tenant
+            tenant_email = frappe.db.get_value("Airport Tenant", contract.tenant, "email")
+            contract.email = tenant_email
             send_mail(contract)
 
 def send_mail(contract):
@@ -49,7 +52,6 @@ def send_mail(contract):
         Airport Management
         """,
         reference_doctype="Airport Shop Contract",
-        reference_name=contract.name
-        now=True
-    )
+        reference_name=contract.name,
+        now=True)
 

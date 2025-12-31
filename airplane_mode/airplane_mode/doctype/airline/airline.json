@@ -12,8 +12,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "founding_year",
   "customer_care_number",
+  "founding_year",
+  "column_break_fzff",
   "headquarters",
   "website"
  ],
@@ -43,6 +44,10 @@
    "fieldtype": "Data",
    "label": "Website",
    "options": "URL"
+  },
+  {
+   "fieldname": "column_break_fzff",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -57,7 +62,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2025-12-22 14:53:21.301322",
+ "modified": "2025-12-30 13:15:45.378471",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",

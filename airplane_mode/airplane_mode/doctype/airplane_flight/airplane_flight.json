@@ -25,13 +25,14 @@
   "column_break_wccd",
   "destination_airport",
   "destination_airport_code",
-  "amended_from",
   "crew_tab",
   "crew_members",
   "miscellaneous_tab",
   "miscellaneous_section",
+  "route",
   "published",
-  "route"
+  "column_break_yiyz",
+  "amended_from"
  ],
  "fields": [
   {
@@ -181,19 +182,18 @@
    "fieldtype": "Table",
    "label": "Crew Members",
    "options": "Flight Crew"
+  },
+  {
+   "fieldname": "column_break_yiyz",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "has_web_view": 1,
  "is_published_field": "published",
  "is_submittable": 1,
- "links": [
-  {
-   "link_doctype": "Crew Member",
-   "link_fieldname": "flight"
-  }
- ],
- "modified": "2025-12-26 10:59:09.960224",
+ "links": [],
+ "modified": "2025-12-30 13:29:16.332782",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

@@ -6,12 +6,14 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "general_tab",
   "general_information_section",
   "passenger",
   "status",
   "column_break_ltvf",
   "flight",
   "seat",
+  "travel_tab",
   "section_break_sual",
   "source_airport",
   "source_airport_code",
@@ -25,6 +27,7 @@
   "column_break_agvi",
   "duration_of_flight",
   "amended_from",
+  "billing_tab",
   "section_break_qqgh",
   "flight_price",
   "add_ons",
@@ -180,13 +183,28 @@
    "fieldname": "gate",
    "fieldtype": "Data",
    "label": "Gate"
+  },
+  {
+   "fieldname": "general_tab",
+   "fieldtype": "Tab Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "travel_tab",
+   "fieldtype": "Tab Break",
+   "label": "Travel"
+  },
+  {
+   "fieldname": "billing_tab",
+   "fieldtype": "Tab Break",
+   "label": "Billing"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-20 19:06:45.172094",
+ "modified": "2025-12-30 13:31:03.001618",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

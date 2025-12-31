@@ -49,24 +49,31 @@
   {
    "fieldname": "tenant",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Licensee Name",
-   "options": "Airport Tenant"
+   "options": "Airport Tenant",
+   "reqd": 1
   },
   {
    "fieldname": "shop",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Shop",
-   "options": "Airport Shop"
+   "options": "Airport Shop",
+   "reqd": 1
   },
   {
    "fieldname": "rent_amount",
    "fieldtype": "Currency",
-   "label": "Rent Amount"
+   "label": "Rent Amount",
+   "non_negative": 1
   },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Valid From"
+   "in_list_view": 1,
+   "label": "Valid From",
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -91,7 +98,8 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "general_tab",
@@ -176,7 +184,9 @@
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "Valid Till"
+   "in_list_view": 1,
+   "label": "Valid Till",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_jnoh",
@@ -264,7 +274,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-26 12:34:06.988531",
+ "modified": "2025-12-30 13:50:56.643322",
  "modified_by": "Administrator",
  "module": "Airport Management",
  "name": "Airport Shop Contract",
@@ -286,6 +296,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "tenant, shop, status",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [

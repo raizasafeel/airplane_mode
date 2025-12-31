@@ -18,6 +18,7 @@
   "general_tab",
   "contract_section",
   "date_rdbf",
+  "column_break_ypfv",
   "contract_valid_till",
   "general_details_section",
   "shop",
@@ -200,8 +201,11 @@
   {
    "fieldname": "contract",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Contract",
-   "options": "Airport Shop Contract"
+   "link_filters": "[[\"Airport Shop Contract\",\"status\",\"=\",\"Active\"]]",
+   "options": "Airport Shop Contract",
+   "reqd": 1
   },
   {
    "fetch_from": "contract.start_date",
@@ -246,13 +250,17 @@
    "fieldname": "bill_section",
    "fieldtype": "Section Break",
    "label": "Receipt"
+  },
+  {
+   "fieldname": "column_break_ypfv",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-26 13:00:07.723524",
+ "modified": "2025-12-30 13:57:09.044921",
  "modified_by": "Administrator",
  "module": "Airport Management",
  "name": "Rent Receipt",

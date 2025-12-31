@@ -1,16 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:{shop}-{first_name}",
  "creation": "2025-12-24 16:19:10.668707",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_8hmq",
-  "name1",
+  "first_name",
   "phone",
-  "email",
   "shop",
+  "column_break_brpb",
+  "last_name",
+  "email",
+  "section_break_xmir",
   "amended_from"
  ],
  "fields": [
@@ -29,39 +32,60 @@
    "search_index": 1
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
-   "unique": 1
-  },
-  {
    "fieldname": "phone",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Phone",
-   "options": "Phone"
+   "options": "Phone",
+   "reqd": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Email",
-   "options": "Email"
+   "options": "Email",
+   "reqd": 1
   },
   {
    "fieldname": "shop",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Shop",
-   "options": "Airport Shop"
+   "options": "Airport Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_brpb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xmir",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2025-12-26 10:52:38.979435",
+ "modified": "2025-12-30 12:46:58.096210",
  "modified_by": "Administrator",
  "module": "Airport Management",
  "name": "Shop Lease Leads",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -74,7 +98,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],

@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-12-30 05:10:00.474266",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": null,
+ "modified": "2025-12-30 05:15:00.546102",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Airports By Shop Occupancy",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Airport",
+ "report_name": "Airports By Shop Occupancy",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

@@ -7,13 +7,14 @@
  "engine": "InnoDB",
  "field_order": [
   "default_tax_rate",
-  "default_rent_amount",
-  "rent_reminder"
+  "rent_reminder",
+  "column_break_woxx",
+  "default_rent_amount"
  ],
  "fields": [
   {
    "fieldname": "default_rent_amount",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "label": "Default Rent Amount"
   },
   {
@@ -26,13 +27,17 @@
    "fieldname": "default_tax_rate",
    "fieldtype": "Percent",
    "label": "Default Tax Rate"
+  },
+  {
+   "fieldname": "column_break_woxx",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-12-26 10:53:04.036104",
+ "modified": "2025-12-30 13:01:50.162370",
  "modified_by": "Administrator",
  "module": "Airport Management",
  "name": "Airport Setting",

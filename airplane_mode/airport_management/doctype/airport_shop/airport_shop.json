@@ -11,11 +11,13 @@
   "basic_information_section",
   "column_break_lekx",
   "airport",
+  "column_break_dsmu",
   "status",
   "operational_details_section",
   "area_sq_ft",
-  "floor",
   "terminal",
+  "column_break_xltx",
+  "floor",
   "tab_2_tab",
   "route",
   "published"
@@ -88,6 +90,14 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "Published"
+  },
+  {
+   "fieldname": "column_break_dsmu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xltx",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
@@ -95,7 +105,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2025-12-24 09:41:55.177699",
+ "modified": "2025-12-30 13:01:37.451648",
  "modified_by": "Administrator",
  "module": "Airport Management",
  "name": "Airport Shop",

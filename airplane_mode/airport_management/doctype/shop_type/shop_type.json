@@ -13,13 +13,13 @@
    "default": "0",
    "fieldname": "enabled",
    "fieldtype": "Check",
-   "label": "enabled"
+   "label": "Enabled"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-24 12:52:20.480238",
+ "modified": "2025-12-30 13:02:43.823157",
  "modified_by": "Administrator",
  "module": "Airport Management",
  "name": "Shop Type",

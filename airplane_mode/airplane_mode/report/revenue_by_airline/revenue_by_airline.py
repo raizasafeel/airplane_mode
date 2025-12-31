@@ -17,7 +17,7 @@ def execute(filters: dict | None = None):
 	chart = get_chart(data)
 	summary = get_summary(data)
 	title = get_title()
-
+ 
 	return columns, data, title, chart, summary
 
 def get_title():

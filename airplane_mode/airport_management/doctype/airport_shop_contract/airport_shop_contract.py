@@ -7,11 +7,11 @@ from frappe.model.document import Document
 
 class AirportShopContract(Document):
 	def get_default_configs(self):
-		default_tax_rate = frappe.db.get_single_value("Airport Shop Configuration", "default_tax_rate")
-		default_rent = frappe.db.get_single_value("Airport Shop Configuration", "default_rent_amount")
+		default_tax_rate = frappe.db.get_value("Airport Setting", fieldname = "default_tax_rate")
+		default_rent_amount = frappe.db.get_value("Airport Setting",fieldname =  "default_rent_amount")
 		return {
 			"default_tax_rate": default_tax_rate,
-			"default_rent": default_rent
+			"default_rent_amount": default_rent_amount
 		}
 	
 	def set_defaults(self):
@@ -28,5 +28,21 @@ class AirportShopContract(Document):
 		if not self.tax_rate or not self.rent_amount:
 			self.set_defaults()
 
+	def before_save(self):
+		self.calculate_total_amount()
+
+	def is_shop_occupied(self):
+		shop_status = frappe.db.get_value("Airport Shop", self.shop, "status")
+		print("\n\n\n", shop_status, self.shop, "\n\n\n")
+		if shop_status == "Occupied":
+			frappe.throw(f"Shop {self.shop} is already occupied.")
+
 	def on_submit(self):
-		frappe.db.set_value("Airport Shop", self.airport_shop, "status", "Occupied")
+		self.is_shop_occupied()
+		frappe.db.set_value("Airport Shop", self.shop, "status", "Occupied")
+		self.date = frappe.utils.nowdate()
+		if self.status != "Active":
+			frappe.throw("Status must be 'Active' on submission.")
+
+	def on_cancel(self):
+		frappe.db.set_value("Airport Shop", self.shop, "status", "Available")
